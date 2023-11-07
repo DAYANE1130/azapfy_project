@@ -12,8 +12,28 @@ class NotasRemetenteController extends Controller
     {
         $response = Http::get('http://homologacao3.azapfy.com.br/api/ps/notas');
         $notas = $response->json();
-
         return $notas;
-        // return [];
     }
 }
+
+
+
+// class ApiController extends Controller
+// {
+//     protected $apiService;
+
+//     public function __construct(ApiService $apiService)
+//     {
+//         $this->apiService = $apiService;
+//     }
+
+//     public function getNotasAgrupadas()
+//     {
+//         $notasAgrupadas = $this->apiService->fetchAndGroupDataFromApi();
+
+//         return response()->json([
+//             'notas_agrupadas' => $notasAgrupadas
+//         ], 200);
+//     }
+// }
+
