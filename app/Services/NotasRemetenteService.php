@@ -27,17 +27,17 @@ class NotasRemetenteService
     }
 
 
-    // public function calculateTotals($nomeRemetente)
-    // {
-    //   $notasAgrupadas = $this->apiModel->getDataApi();
-    //   $total = 0;
+    public function calculateTotals($nomeRemetente)
+    {
+      $notasAgrupadas = $this->apiModel->getDataApi();
+      $total = 0;
 
-    //   foreach ($notasAgrupadas as $nota) {
-    //     $valorNumero = floatval($nota['valor']);
-    //       $total += $valorNumero ;
+      foreach ($notasAgrupadas as $nota) {
+        $valorNumero = floatval($nota['valor']);
+          $total += $valorNumero ;
         
-    //     }
-    //     return $total;
+        }
+        return $total;
         
-    // }
+    }
 }
