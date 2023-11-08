@@ -11,7 +11,6 @@ Route::get('/notasRemetente/{nome_remetente}/calculateDelivered', [NotasRemetent
 Route::get('/notasRemetente/{nome_remetente}/calculateNotDelivered', [NotasRemetenteController::class, 'calculateNotDelivered']);
 Route::get('/notasRemetente/{nome_remetente}/calculateDelay', [NotasRemetenteController::class, 'calculateDelay']);
 
-
 Route::get('/', function () {
     return response()->json([
         'success' => true

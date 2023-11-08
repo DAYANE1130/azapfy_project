@@ -66,3 +66,4 @@ public function calculateDelay($nome_remetente)
 }
 
 }
+
