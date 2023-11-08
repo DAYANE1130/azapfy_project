@@ -68,5 +68,19 @@ class NotasRemetenteService
         return $total;
         
     }
+
+    public function calculateDelay($nomeRemetente)
+    {
+      $notasAgrupadas = $this->groupNotesBySender($nomeRemetente);
+      $total = 0 ;
+      foreach ($notasAgrupadas as $nota) {
+        $valorNumero = floatval($nota['valor']);
+        if (! array_key_exists('dt_entrega',$nota) ){
+           $total += $valorNumero ;
+        }
+        }
+        return $total;
+        
+    }
 }
 

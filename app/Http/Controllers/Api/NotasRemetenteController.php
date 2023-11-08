@@ -54,4 +54,15 @@ public function calculateNotDelivered($nome_remetente)
 ], 200);
     
 }
+
+public function calculateDelay($nome_remetente)
+{
+  $valuetotal = $this->apiService->calculateDelay($nome_remetente);
+ 
+  return response()->json([
+    'valor_Total' => $valuetotal 
+], 200);
+    
+}
+
 }
