@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::get('/notasRemetente', [NotasRemetenteController::class, 'obterDadosDaAPI']);
+Route::get('/notasRemetente/{nome_remetente}', [NotasRemetenteController::class, 'getNotasAgrupadas']);
 
 Route::get('/', function () {
     return response()->json([

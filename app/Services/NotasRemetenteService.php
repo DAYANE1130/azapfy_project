@@ -2,19 +2,22 @@
 
 namespace App\Services;
 
-use App\Models\ApiModel;
+use App\Models\NotasRemetenteModel;
 
-class ApiService
+class NotasRemetenteService
 {
     protected $apiModel;
 
-    public function __construct(ApiModel $apiModel)
+    public function __construct(NotasRemetenteModel $apiModel)
     {
         $this->apiModel = $apiModel;
     }
 
-    public function fetchAndGroupDataFromApi()
-    {
-        return $this->apiModel->getDataFromApi();
+    public function fetchAndGroupDataFromApi($nomeRemetente)
+    {  
+        $data = $this->apiModel->getDataFromApi();
+        $notasAgrupadas = $this->apiModel->agruparNotasPorRemetente($data, $nomeRemetente);
+
+        return $notasAgrupadas;
     }
 }
