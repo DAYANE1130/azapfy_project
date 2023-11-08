@@ -15,9 +15,9 @@ class NotasRemetenteController extends Controller
         $this->apiService = $apiService;
     }
 
-    public function getNotasAgrupadas($nome_remetente)
+    public function groupNotesBySender($nome_remetente)
 {
-    $notasAgrupadas = $this->apiService->fetchAndGroupDataFromApi($nome_remetente);
+    $notasAgrupadas = $this->apiService->groupNotesBySender($nome_remetente);
 
     return response()->json([
         'notas_agrupadas' => $notasAgrupadas

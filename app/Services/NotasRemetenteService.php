@@ -13,10 +13,9 @@ class NotasRemetenteService
         $this->apiModel = $apiModel;
     }
 
-    public function fetchAndGroupDataFromApi($nomeRemetente)
+    public function groupNotesBySender($nomeRemetente)
     {  
-        $data = $this->apiModel->getDataFromApi();
-        $notasAgrupadas = $this->apiModel->agruparNotasPorRemetente($data, $nomeRemetente);
+        $notasAgrupadas = $this->apiModel->groupNotesBySender( $nomeRemetente);
 
         return $notasAgrupadas;
     }

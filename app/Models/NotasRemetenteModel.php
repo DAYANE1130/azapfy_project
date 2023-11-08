@@ -69,24 +69,31 @@ use Illuminate\Support\Facades\Http;
 
 class NotasRemetenteModel extends Model
 {
-    public function getDataFromApi()
+    public function groupNotesBySender($nomeRemetente)
     {
         $response = Http::get('http://homologacao3.azapfy.com.br/api/ps/notas');
         $notas = $response->json();
-
-        return $notas;
-    }
-
-    public function agruparNotasPorRemetente($notas, $nomeRemetente)
-    {
         $notasAgrupadas = [];
-
+    
         foreach ($notas as $nota) {
-            if ($nota['nome_remete'] == $nomeRemetente) {
-                $notasAgrupadas[] = $nota;
+         if ($nota['nome_remete'] == $nomeRemetente) {
+                    $notasAgrupadas[] = $nota;
+                }
             }
-        }
-
         return $notasAgrupadas;
+        
     }
+
+    // public function agruparNotasPorRemetente($notas, $nomeRemetente)
+    // {
+    //     $notasAgrupadas = [];
+
+    //     foreach ($notas as $nota) {
+    //         if ($nota['nome_remete'] == $nomeRemetente) {
+    //             $notasAgrupadas[] = $nota;
+    //         }
+    //     }
+
+    //     return $notasAgrupadas;
+    // }
 }
