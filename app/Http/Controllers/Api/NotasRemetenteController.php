@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\NotasRemetenteService;
 
+
 class NotasRemetenteController extends Controller
 {
     protected $apiService;
