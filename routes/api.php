@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/notasRemetente/{nome_remetente}', [NotasRemetenteController::class, 'groupNotesBySender']);
 Route::get('/notasRemetente/{nome_remetente}/calculateTotals', [NotasRemetenteController::class, 'calculateTotals']);
-// Route::get('/notasRemetente/{nome_remetente}/calcularEntregue', [NotasRemetenteController::class, 'calcularEntregue']);
+Route::get('/notasRemetente/{nome_remetente}/calculateDelivered', [NotasRemetenteController::class, 'calculateDelivered']);
 // Route::get('/notasRemetente/{nome_remetente}/calcularNaoEntregue', [NotasRemetenteController::class, 'calcularNaoEntregue']);
 // Route::get('/notasRemetente/{nome_remetente}/calcularAtraso', [NotasRemetenteController::class, 'calcularAtraso']);
 

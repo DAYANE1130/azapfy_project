@@ -40,5 +40,19 @@ class NotasRemetenteService
         return $total;
         
     }
+
+    public function calculateDelivered($nomeRemetente)
+    {
+      $notasAgrupadas = $this->groupNotesBySender($nomeRemetente);
+      $total = 0 ;
+      foreach ($notasAgrupadas as $nota) {
+        $valorNumero = floatval($nota['valor']);
+        if ($nota['status'] == 'COMPROVADO'){
+           $total += $valorNumero ;
+        }
+        }
+        return $total;
+        
+    }
 }
 

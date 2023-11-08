@@ -35,4 +35,15 @@ public function calculateTotals($nome_remetente)
 ], 200);
     
 }
+
+public function calculateDelivered($nome_remetente)
+{
+  $valuetotal = $this->apiService->calculateDelivered($nome_remetente);
+  $total = 0;
+
+  return response()->json([
+    'valor_Total' => $valuetotal 
+], 200);
+    
+}
 }
