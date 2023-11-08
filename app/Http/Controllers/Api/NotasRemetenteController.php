@@ -28,7 +28,6 @@ class NotasRemetenteController extends Controller
 public function calculateTotals($nome_remetente)
 {
   $valuetotal = $this->apiService->calculateTotals($nome_remetente);
-  $total = 0;
 
   return response()->json([
     'valor_Total' => $valuetotal 
@@ -39,8 +38,17 @@ public function calculateTotals($nome_remetente)
 public function calculateDelivered($nome_remetente)
 {
   $valuetotal = $this->apiService->calculateDelivered($nome_remetente);
-  $total = 0;
 
+  return response()->json([
+    'valor_Total' => $valuetotal 
+], 200);
+    
+}
+
+public function calculateNotDelivered($nome_remetente)
+{
+  $valuetotal = $this->apiService->calculateNotDelivered($nome_remetente);
+ 
   return response()->json([
     'valor_Total' => $valuetotal 
 ], 200);
