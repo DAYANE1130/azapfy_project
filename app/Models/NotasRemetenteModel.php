@@ -11,6 +11,10 @@ class NotasRemetenteModel extends Model
     public function getDataApi()
     {
         $response = Http::get('http://homologacao3.azapfy.com.br/api/ps/notas');
+
+        if (!$response->successful()) {
+            throw new \Exception('Não foi possível obter os dados da API externa.');
+        }
         $notas = $response->json();
         return $notas;
         
