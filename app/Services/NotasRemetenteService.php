@@ -15,8 +15,29 @@ class NotasRemetenteService
 
     public function groupNotesBySender($nomeRemetente)
     {  
-        $notasAgrupadas = $this->apiModel->groupNotesBySender( $nomeRemetente);
-
+        $notas = $this->apiModel->getDataApi();
+        $notasAgrupadas = [];
+    
+        foreach ($notas as $nota) {
+         if ($nota['nome_remete'] == $nomeRemetente) {
+                    $notasAgrupadas[] = $nota;
+                }
+            }
         return $notasAgrupadas;
     }
+
+
+    // public function calculateTotals($nomeRemetente)
+    // {
+    //   $notasAgrupadas = $this->apiModel->getDataApi();
+    //   $total = 0;
+
+    //   foreach ($notasAgrupadas as $nota) {
+    //     $valorNumero = floatval($nota['valor']);
+    //       $total += $valorNumero ;
+        
+    //     }
+    //     return $total;
+        
+    // }
 }
