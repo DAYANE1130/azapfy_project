@@ -15,6 +15,7 @@ class NotasRemetenteController extends Controller
         $this->apiService = $apiService;
     }
 
+
     public function groupNotesBySender($nome_remetente)
 {
     $notasAgrupadas = $this->apiService->groupNotesBySender($nome_remetente);
@@ -24,4 +25,14 @@ class NotasRemetenteController extends Controller
     ], 200);
 }
 
+public function calculateTotals($nome_remetente)
+{
+  $valuetotal = $this->apiService->calculateTotals($nome_remetente);
+  $total = 0;
+
+  return response()->json([
+    'valor_Total' => $valuetotal 
+], 200);
+    
+}
 }

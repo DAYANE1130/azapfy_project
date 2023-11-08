@@ -29,7 +29,7 @@ class NotasRemetenteService
 
     public function calculateTotals($nomeRemetente)
     {
-      $notasAgrupadas = $this->apiModel->getDataApi();
+      $notasAgrupadas = $this->groupNotesBySender($nomeRemetente);
       $total = 0;
 
       foreach ($notasAgrupadas as $nota) {
@@ -41,3 +41,4 @@ class NotasRemetenteService
         
     }
 }
+
