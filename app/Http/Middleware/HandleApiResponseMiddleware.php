@@ -13,8 +13,8 @@ class HandleApiResponseMiddleware
         $response = $next($request);
     
         if (!$response->isSuccessful()) {
-            $response->status(500);
-            throw new \Exception('Por favor tente mais tarde ou verifique  se o endereço foi digitado corretamente');
+            $response->status(404);
+            throw new \Exception('Pagina não encontrada ou verifique  se o endereço foi digitado corretamente');
         }
     
         return $response;

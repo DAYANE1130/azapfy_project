@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Models\NotasRemetenteModel;
+use DateTime;
+
 
 class NotasRemetenteService
 {
@@ -69,17 +71,27 @@ class NotasRemetenteService
     }
 
     public function calculateDelay($nomeRemetente)
-    {
-      $notasAgrupadas = $this->groupNotesBySender($nomeRemetente);
-      $total = 0 ;
-      foreach ($notasAgrupadas as $nota) {
+{
+    $notasAgrupadas = $this->groupNotesBySender($nomeRemetente);
+    $total = 0;
+
+    foreach ($notasAgrupadas as $nota) {
         $valorNumero = floatval($nota['valor']);
-        if (!array_key_exists('dt_entrega',$nota) ){
-           $total += $valorNumero ;
+        if (array_key_exists('dt_emis', $nota) && array_key_exists('dt_entrega', $nota)) {
+            $dtEmis = DateTime::createFromFormat('d/m/Y H:i:s', $nota['dt_emis']);
+            $dtEntrega = DateTime::createFromFormat('d/m/Y H:i:s', $nota['dt_entrega']);
+
+            $interval = $dtEmis->diff($dtEntrega);
+
+            if ($interval->days * 24 + $interval->h > 48 || ($interval->days == 2 && $interval->i > 1)) {
+                $total += $valorNumero;
+            }
         }
-        }
-        return $total;
-        
     }
+
+    return $total;
+}
+
+
 }
 
