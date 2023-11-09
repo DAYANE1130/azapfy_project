@@ -20,13 +20,18 @@ Neste desafio, foi desenvolvida uma API para o controle de pagamento pelas entre
 
 Para executar o projeto, siga os passos abaixo:
 
-1. Clone o repositório do GitHub (git@github.com:DAYANE1130/azapfy_project.git) digite no seu terminal o comando abaixo:
+1. Abra um terminal e clone o repositório do GitHub (git@github.com:DAYANE1130/azapfy_project.git) , digite no seu terminal o comando abaixo:
 
     `git clone git@github.com:DAYANE1130/azapfy_project.git`
    
 3. Certifique-se de ter o Docker instalado em sua máquina.
 4. Abra um terminal na raiz do projeto e execute o comando `docker-compose up -d` para iniciar o ambiente.
-5. Acesse a API através do endpoint fornecido.
+5. Acessar o container
+   `docker-compose exec app bash`
+6- Instalar as dependências do projeto
+   `composer install`
+7. Acesse a API através do endpoint fornecido http://localhost:8989 o retorno será (sucess:true)
+   Pronto agora você já pode entrar na rota escolhida usando o endpoint acima acrescentando a rota desejada.
 
 
 
