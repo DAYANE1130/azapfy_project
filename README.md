@@ -24,13 +24,17 @@ Para executar o projeto, siga os passos abaixo:
 
     `git clone git@github.com:DAYANE1130/azapfy_project.git`
    
-3. Certifique-se de ter o Docker instalado em sua máquina.
-4. Abra um terminal na raiz do projeto e execute o comando `docker-compose up -d` para iniciar o ambiente.
-5. Acessar o container
+2. Certifique-se de ter o Docker instalado em sua máquina.
+   
+3. Abra um terminal na raiz do projeto e execute o comando `docker-compose up -d` para iniciar o ambiente.
+   
+4. Acessar o container
    `docker-compose exec app bash`
-6- Instalar as dependências do projeto
+   
+5- Instalar as dependências do projeto
    `composer install`
-7. Acesse a API através do endpoint fornecido http://localhost:8989 o retorno será (sucess:true)
+   
+6. Acesse a API através do endpoint fornecido http://localhost:8989 o retorno será (sucess:true)
    Pronto agora você já pode entrar na rota escolhida usando o endpoint acima acrescentando a rota desejada.
 
 
