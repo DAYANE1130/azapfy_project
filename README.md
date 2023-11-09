@@ -15,6 +15,7 @@ Neste desafio, foi desenvolvida uma API para o controle de pagamento pelas entre
 - Docker: Empregado para a containerização do ambiente de desenvolvimento, garantindo a consistência entre diferentes ambientes.
 - Arquitetura em Camadas (Model, Service e Controller): Organização do código para melhor manutenção e escalabilidade.
 - Middleware de Erro para API Externa: Implementado para lidar com cenários onde a API externa não responda.
+ O código está nesse link https://github.com/DAYANE1130/azapfy_project/tree/dayane_azapfy ou se preferir entre na branch (dayane_azapfy)
 
 ## Executando o Projeto
 
