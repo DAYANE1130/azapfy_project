@@ -21,7 +21,8 @@ Neste desafio, foi desenvolvida uma API para o controle de pagamento pelas entre
 Para executar o projeto, siga os passos abaixo:
 
 1. Clone o repositório do GitHub (git@github.com:DAYANE1130/azapfy_project.git) digite no seu terminal o comando abaixo:
- `git clone git@github.com:DAYANE1130/azapfy_project.git`
+
+    `git clone git@github.com:DAYANE1130/azapfy_project.git`
    
 3. Certifique-se de ter o Docker instalado em sua máquina.
 4. Abra um terminal na raiz do projeto e execute o comando `docker-compose up -d` para iniciar o ambiente.
@@ -38,6 +39,8 @@ Desenvolvido por [Dayane Barbosa Martins] utilizando o Postman.
 A documentação completa e detalhada está no link https://documenter.getpostman.com/view/31041446/2s9YXiYM3A#intro 
 
 ## Endpoints
+
+Obs: o nome_do_remetente é encontrado no arquivo Url da API: http://homologacao3.azapfy.com.br/api/ps/notas  no campo (nome_remete: "CARVALHO ONIBUS LTDA")
 
 ### Agrupar Notas por Remetente 
 
