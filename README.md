@@ -1,5 +1,5 @@
 
-# Azapfy - Controle de Pagamento por Entregas
+# Projeto - Controle de Pagamento por Entregas
 
 ## Introdução
 
